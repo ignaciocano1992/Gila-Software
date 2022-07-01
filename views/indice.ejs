@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Gila Software</title>
+  </head>
+  <body>
+    <h1 style="text-align:center">Gila Software</h1>
+
+    <div class="container">
+        <a href="/crear" class="btn btn-outline-primary mt-4"><i class="bi bi-plus-circle-fill bi-md"></i></a>
+        <table class="table table-bordered table-striped text-center mt-4">
+            <thead>
+                <tr class="bg-primary text-white">
+                    <th scoope="col">ID producto</th>
+                    <th scoope="col">Nombre producto</th>
+                    <th scoope="col">SKU producto</th>
+                    <th scoope="col">Marca producto</th>
+                    <th scoope="col">Precio producto</th>
+                    <th scoope="col">Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((productos)=>{ %>
+                <tr>
+                    <td><%=productos.id %></td>
+                    <td><%=productos.NombreProducto %></td>
+                    <td><%=productos.SkuProducto %></td>
+                    <td><%=productos.MarcaProducto %></td>
+                    <td><%=productos.CostoProducto %></td>
+                    <td><%=productos.Categoria %></td>
+                    <td>
+                        <!-- <a href="/editar/<%=productos.id%>" class="btn btn-outline-info">Editar</a> -->
+                        <a href="/borrar/<%=productos.id%>" class="btn btn-outline-info">Borrar</a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
